@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react'
 
-class MenuItems extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {price: this.props.price}
+const Menuitems = (props) => {
+    let [likes, setLikes] = useState(props.likes)
+    const {dishName, price} = props
+    const addALike = () => {
+        setLikes(likes + 1)
     }
-    render() {
-        return (
-            <div>
-                <h2>Name: {this.props.dishName}</h2>
-                <h3>Price: ${this.state.price}</h3>
-                <h5>{this.props.children}</h5>
-                <button onClick={() => this.setState({price: this.state.price + 1})}>Inflation!</button>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <h1>Name: {dishName}</h1>
+            <p>Price: ${price}</p>
+            <p>Number of Likes: {likes}</p>
+            <button className="btn btn-outline-info" onClick={addALike}>{dishName}</button>
+            <hr />
+        </div>
+    )
 }
-
-export default MenuItems; 
+export default Menuitems
