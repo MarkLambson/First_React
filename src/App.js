@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import MenuItems from './components/menuitems';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Into - Menu Items</h1>
+      <MenuItems dishName = {"Lasagana"} price = {20.00}>
+    <p>It's great Italian food</p>
+      </MenuItems>
+      <MenuItems dishName = {"Pizza"} price = {25.00}>
+    <p>It's great Italian food</p>
+      </MenuItems>
+      <MenuItems dishName = {"Sushi - Dragon Roll"} price = {15.00}>
+    <p>May cause food illness if not properly handled</p>
+      </MenuItems>
     </div>
   );
 }
